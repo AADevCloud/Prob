@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-prob-service
+  labels:
+    app: development
+    tier: production
+spec:
+  type: NodePort
+  selector:
+    app: development
+    tier: production
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    nodePort: 30080  
+
